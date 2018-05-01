@@ -12,7 +12,7 @@
     android:paddingTop="@dimen/Toppad"
     tools:context="com.example.kioi.jkuatportal.RegisterActivity">
 
-    <!--  <EditText
+     <EditText
           android:id="@+id/studentName"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
@@ -20,7 +20,7 @@
           android:layout_marginLeft="10dp"
           android:layout_marginRight="@dimen/marginside"
           android:hint="@string/student_name"
-          android:inputType="text"
+          android:inputType="text"></EditText>
 
       <EditText
           android:id="@+id/studentReg"
@@ -30,7 +30,7 @@
           android:layout_marginRight="10dp"
           android:layout_marginTop="20dp"
           android:hint="@string/student_reg_number"
-          android:inputType="text"
+          android:inputType="text"></EditText>
 
       <EditText
           android:id="@+id/course"
@@ -40,7 +40,7 @@
           android:layout_marginRight="10dp"
           android:layout_marginTop="20dp"
           android:hint="@string/course"
-          android:inputType="text" -->
+          android:inputType="text" ></EditText>
 
     <EditText
         android:id="@+id/mail"
@@ -77,12 +77,12 @@
         android:id="@+id/register_sign_up_button"
         style="?android:textAppearanceMedium"
         android:background="@color/white"
-        android:textColor="@color/white"
+        android:textColor="@color/colorPrimary"
         android:onClick="signUp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="signUp"
+        android:text="Register"
         android:textStyle="bold"/>
 
 
