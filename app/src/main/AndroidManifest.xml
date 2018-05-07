@@ -26,7 +26,38 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/title_activity_main2"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".courses">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.kioi.jkuatportal.MainActivity" />
+        </activity>
+        <activity android:name=".Lecturers">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.kioi.jkuatportal.LoginActivity" />
+        </activity>
+        <activity android:name=".Timetable">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.kioi.jkuatportal.LoginActivity" />
+        </activity>
+        <activity android:name=".Jkusa">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.kioi.jkuatportal.LoginActivity" />
+        </activity>
+        <activity android:name=".Classreps">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.kioi.jkuatportal.LoginActivity" />
+        </activity>
+        <activity android:name=".Map">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.kioi.jkuatportal.LoginActivity" />
+        </activity>
+        <activity android:name=".chat"></activity>
     </application>
 
 </manifest>

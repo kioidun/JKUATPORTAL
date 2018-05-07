@@ -1,5 +1,6 @@
 package com.example.kioi.jkuatportal;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -13,11 +14,22 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.TextView;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-    private String mDisplayName;
+
+    private Button mCourses;
+    private Button mLecturers;
+    private Button mTimetable;
+    private Button mJkusa;
+    private Button mClassrep;
+    private Button mMap;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,15 +38,73 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+          //setting up the display name and get the FIREBASE reference
+        // a database reference represents a particular location in the cloud database. databasereference is used for reading and writing data to that location in the db.
 
-        setupDisplayNmae();
 
+        mCourses=(Button)findViewById(R.id.courses);
+        mLecturers=(Button)findViewById(R.id.lecturers);
+        mTimetable=(Button)findViewById(R.id.Timetable);
+        mJkusa=(Button)findViewById(R.id.jkusa);
+        mClassrep=(Button)findViewById(R.id.Classreps);
+        mMap=(Button)findViewById(R.id.maps);
+
+        mCourses.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent courses=new Intent(MainActivity.this, com.example.kioi.jkuatportal.courses.class);
+                startActivity(courses);
+                finish();
+            }
+        });
+
+        mLecturers.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent lecturers=new Intent(MainActivity.this,Lecturers.class);
+                startActivity(lecturers);
+                finish();
+            }
+        });
+        mTimetable.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent Timetable=new Intent(MainActivity.this, com.example.kioi.jkuatportal.Timetable.class);
+                startActivity(Timetable);
+                finish();
+            }
+        });
+        mJkusa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent jkusa=new Intent(MainActivity.this,Jkusa.class);
+                startActivity(jkusa);
+                finish();
+            }
+        });
+        mClassrep.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent classrep=new Intent(MainActivity.this,Classreps.class );
+                startActivity(classrep);
+                finish();
+            }
+        });
+        mMap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent map=new Intent(MainActivity.this,Map.class );
+                startActivity(map);
+                finish();
+            }
+        });
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent intent =new Intent(MainActivity.this,chat.class);
+                startActivity(intent);
+                finish();
             }
         });
 
@@ -104,13 +174,5 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-    private void setupDisplayNmae(){
-        SharedPreferences prefs =getSharedPreferences(RegisterActivity.CHAT_PREFS,MODE_PRIVATE);
 
-        mDisplayName=prefs.getString(RegisterActivity.DISPLAY_NAME_KEY,null);
-
-        if (mDisplayName==null)mDisplayName="anonymous";
-
-
-    }
 }

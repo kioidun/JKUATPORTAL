@@ -57,9 +57,15 @@ public class LoginActivity extends AppCompatActivity {
 
             }
         });
+        mLoginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                attemptLogin();
+            }
+        });
         mAuth=FirebaseAuth.getInstance();
     }
-    public void signInExistingUser(View v){
+    public void signInExistingUser(View v)   {
         attemptLogin();
 
     }
