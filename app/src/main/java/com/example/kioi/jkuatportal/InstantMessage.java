@@ -3,11 +3,12 @@ package com.example.kioi.jkuatportal;
 public class InstantMessage {
 
     private String message;
-    private String Author;
+    private String author;
 
     public InstantMessage(String message, String author) {
+        this.author = author;
         this.message = message;
-        Author = author;
+
     }
 
     public InstantMessage() {
@@ -18,6 +19,6 @@ public class InstantMessage {
     }
 
     public String getAuthor() {
-        return Author;
+        return author;
     }
 }
