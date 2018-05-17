@@ -40,6 +40,7 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         mStudentName=(EditText)findViewById(R.id.studentName);
         mStudentRegNo=(EditText)findViewById(R.id.studentReg);

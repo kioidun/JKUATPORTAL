@@ -18,6 +18,7 @@
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           android:layout_gravity="center_horizontal"
+         android:textColor="@color/white"
           android:layout_marginLeft="10dp"
           android:layout_marginRight="@dimen/marginside"
          android:textColorHint="@color/white"
@@ -30,6 +31,7 @@
           android:layout_height="wrap_content"
           android:layout_marginLeft="10dp"
           android:layout_marginRight="10dp"
+          android:textColor="@color/white"
           android:layout_marginTop="20dp"
           android:hint="@string/student_reg_number"
           android:textColorHint="@color/white"
@@ -41,6 +43,7 @@
           android:layout_height="wrap_content"
           android:layout_marginLeft="10dp"
           android:layout_marginRight="10dp"
+          android:textColor="@color/white"
           android:layout_marginTop="20dp"
           android:textColorHint="@color/white"
           android:hint="@string/course"
@@ -55,6 +58,7 @@
         android:layout_marginTop="20dp"
         android:textColorHint="@color/white"
         android:hint="@string/email"
+        android:textColor="@color/white"
         android:inputType="textEmailAddress" />
 
     <EditText
@@ -66,6 +70,7 @@
         android:textColorHint="@color/white"
         android:layout_marginTop="20dp"
         android:hint="@string/password"
+        android:textColor="@color/white"
         android:inputType="textPassword" />
 
     <EditText
@@ -76,6 +81,7 @@
         android:layout_marginRight="10dp"
         android:textColorHint="@color/white"
         android:layout_marginTop="20dp"
+        android:textColor="@color/white"
         android:hint="@string/confirm_password"
         android:imeActionId="@+id/register_form_finished"
         android:inputType="textPassword" />

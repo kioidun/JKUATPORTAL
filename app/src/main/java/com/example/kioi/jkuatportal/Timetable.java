@@ -22,6 +22,7 @@ private static final int GALLERY_INTENT =2;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timetable);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         mStorageReference= FirebaseStorage.getInstance().getReference();
         mselectImage=(Button)findViewById(R.id.selectImage);

@@ -16,6 +16,7 @@ public class Lecturers extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lecturers);
         mListView=(ListView)findViewById(R.id.listLecturers);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         ArrayList<String> courses=new ArrayList<String>();
         courses.add("Lecturers 1");

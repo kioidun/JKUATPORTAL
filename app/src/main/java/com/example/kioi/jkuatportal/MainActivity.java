@@ -2,6 +2,7 @@ package com.example.kioi.jkuatportal;
 
 import android.app.FragmentManager;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.view.View;
@@ -14,6 +15,10 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.TextView;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -24,7 +29,9 @@ public class MainActivity extends AppCompatActivity
     private Button mJkusa;
     private Button mClassrep;
     private Button mMap;
-
+    private DatabaseReference mDatabaseReference;
+    private String mDisplayName;
+    private TextView mName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,11 +39,13 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
           //setting up the display name and get the FIREBASE reference
         // a database reference represents a particular location in the cloud database. databasereference is used for reading and writing data to that location in the db.
-
-
+        mName=(TextView)findViewById(R.id.Name);
+        setupDisplayName();
+        mDatabaseReference = FirebaseDatabase.getInstance().getReference();
         mCourses=(Button)findViewById(R.id.courses);
         mLecturers=(Button)findViewById(R.id.lecturers);
         mTimetable=(Button)findViewById(R.id.Timetable);
@@ -112,7 +121,15 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
     }
+    private void setupDisplayName(){
+        SharedPreferences prefs =getSharedPreferences(RegisterActivity.CHAT_PREFS,MODE_PRIVATE);
 
+        mDisplayName=prefs.getString(RegisterActivity.DISPLAY_NAME_KEY,null);
+
+        if (mDisplayName==null)mDisplayName="anonymous";
+
+
+    }
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
