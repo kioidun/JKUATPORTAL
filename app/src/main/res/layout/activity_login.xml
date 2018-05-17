@@ -10,6 +10,7 @@
     android:paddingLeft="@dimen/leftpad"
     android:paddingRight="@dimen/rightpad"
     android:paddingTop="@dimen/Toppad"
+    android:background="@drawable/back"
     tools:context="com.example.kioi.jkuatportal.LoginActivity">
 
     <ImageView
@@ -26,6 +27,7 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:hint="@string/email"
+        android:textColorHint="@color/white"
         android:inputType="textEmailAddress" />
 
     <EditText
@@ -36,6 +38,7 @@
         android:layout_marginRight="10dp"
         android:layout_marginTop="20dp"
         android:imeActionId="@+id/login"
+        android:textColorHint="@color/white"
         android:hint="@string/password"
         android:inputType="textPassword" />
 

@@ -9,6 +9,7 @@
     android:paddingBottom="@dimen/bottompad"
     android:paddingLeft="@dimen/leftpad"
     android:paddingRight="@dimen/rightpad"
+    android:background="@drawable/back"
     android:paddingTop="@dimen/Toppad"
     tools:context="com.example.kioi.jkuatportal.RegisterActivity">
 
@@ -19,6 +20,7 @@
           android:layout_gravity="center_horizontal"
           android:layout_marginLeft="10dp"
           android:layout_marginRight="@dimen/marginside"
+         android:textColorHint="@color/white"
           android:hint="@string/student_name"
           android:inputType="text"></EditText>
 
@@ -30,6 +32,7 @@
           android:layout_marginRight="10dp"
           android:layout_marginTop="20dp"
           android:hint="@string/student_reg_number"
+          android:textColorHint="@color/white"
           android:inputType="text"></EditText>
 
       <EditText
@@ -39,6 +42,7 @@
           android:layout_marginLeft="10dp"
           android:layout_marginRight="10dp"
           android:layout_marginTop="20dp"
+          android:textColorHint="@color/white"
           android:hint="@string/course"
           android:inputType="text" ></EditText>
 
@@ -49,6 +53,7 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginTop="20dp"
+        android:textColorHint="@color/white"
         android:hint="@string/email"
         android:inputType="textEmailAddress" />
 
@@ -58,6 +63,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
+        android:textColorHint="@color/white"
         android:layout_marginTop="20dp"
         android:hint="@string/password"
         android:inputType="textPassword" />
@@ -68,6 +74,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
+        android:textColorHint="@color/white"
         android:layout_marginTop="20dp"
         android:hint="@string/confirm_password"
         android:imeActionId="@+id/register_form_finished"

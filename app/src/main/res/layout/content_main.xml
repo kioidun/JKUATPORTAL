@@ -4,24 +4,28 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:id="@+id/linearLayoutMain"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".MainActivity"
     android:orientation="vertical"
     android:gravity="center"
+    android:background="@drawable/background1"
     tools:showIn="@layout/app_bar_main">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="20dp">
+        android:layout_marginTop="10dp">
         <Button
             android:id="@+id/courses"
             android:layout_width="wrap_content"
             android:width="120dp"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="50dp"
             android:layout_height="wrap_content"
             android:height="120dp"
+            android:background="@drawable/circle_background"
             android:text="Courses"
 
             />
@@ -32,39 +36,48 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:height="120dp"
+            android:background="@drawable/circle_background1"
             android:text="Lecturers"
-            android:layout_height="wrap_content" />
-        <Button
-            android:id="@+id/Timetable"
-            android:layout_width="wrap_content"
-            android:width="120dp"
-            android:layout_marginLeft="10dp"
-            android:height="120dp"
-            android:text="TimeTable"
-            android:layout_marginRight="10dp"
             android:layout_height="wrap_content" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:layout_marginTop="20dp">
+        <Button
+            android:id="@+id/Timetable"
+            android:layout_width="wrap_content"
+            android:width="120dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="50dp"
+            android:height="120dp"
+            android:background="@drawable/circle_background2"
+            android:text="TimeTable"
+            android:layout_height="wrap_content" />
+
         <Button
             android:id="@+id/jkusa"
             android:layout_width="wrap_content"
             android:width="120dp"
+            android:background="@drawable/circle_background3"
             android:layout_marginLeft="10dp"
             android:layout_height="wrap_content"
             android:height="120dp"
             android:text="jkusa"
 
             />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
         <Button
             android:id="@+id/Classreps"
             android:layout_width="wrap_content"
             android:width="120dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
+            android:background="@drawable/circle_background4"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="50dp"
             android:height="120dp"
             android:text="Classrep"
             android:layout_height="wrap_content" />
@@ -73,6 +86,7 @@
             android:layout_width="wrap_content"
             android:width="120dp"
             android:layout_marginLeft="10dp"
+            android:background="@drawable/circle_background5"
             android:height="120dp"
             android:text="Map"
             android:layout_marginRight="10dp"
