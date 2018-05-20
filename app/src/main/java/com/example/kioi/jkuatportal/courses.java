@@ -1,7 +1,9 @@
 package com.example.kioi.jkuatportal;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -44,5 +46,15 @@ public class courses extends AppCompatActivity {
         ArrayAdapter<String > arrayAdapter =new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,courses);
         mListView.setAdapter(arrayAdapter);
 
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            // Respond to the action bar's Up/Home button
+            case android.R.id.home:
+                startActivity(new Intent(this, MainActivity.class));
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
