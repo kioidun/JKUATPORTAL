@@ -40,23 +40,33 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        android.support.v7.app.ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle("Menu");
 
-          //setting up the display name and get the FIREBASE reference
+        //setting up the display name and get the FIREBASE reference
         // a database reference represents a particular location in the cloud database. databasereference is used for reading and writing data to that location in the db.
-        mName=(TextView)findViewById(R.id.Name);
+        if(sharedPreference.getUserName(MainActivity.this).length() == 0)
+        {
+            // call Login Activ
+        }
+        else
+        {
+            // Stay at the current activity.
+        }
+        mName = (TextView) findViewById(R.id.Name);
         setupDisplayName();
         mDatabaseReference = FirebaseDatabase.getInstance().getReference();
-        mCourses=(Button)findViewById(R.id.courses);
-        mLecturers=(Button)findViewById(R.id.lecturers);
-        mTimetable=(Button)findViewById(R.id.Timetable);
-        mJkusa=(Button)findViewById(R.id.jkusa);
-        mClassrep=(Button)findViewById(R.id.Classreps);
-        mMap=(Button)findViewById(R.id.maps);
+        mCourses = (Button) findViewById(R.id.courses);
+        mLecturers = (Button) findViewById(R.id.lecturers);
+        mTimetable = (Button) findViewById(R.id.Timetable);
+        mJkusa = (Button) findViewById(R.id.jkusa);
+        mClassrep = (Button) findViewById(R.id.Classreps);
+        mMap = (Button) findViewById(R.id.maps);
 
         mCourses.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent courses=new Intent(MainActivity.this, com.example.kioi.jkuatportal.courses.class);
+                Intent courses = new Intent(MainActivity.this, com.example.kioi.jkuatportal.courses.class);
                 startActivity(courses);
                 finish();
             }
@@ -65,7 +75,7 @@ public class MainActivity extends AppCompatActivity
         mLecturers.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent lecturers=new Intent(MainActivity.this,Lecturers.class);
+                Intent lecturers = new Intent(MainActivity.this, Lecturers.class);
                 startActivity(lecturers);
                 finish();
             }
@@ -73,7 +83,7 @@ public class MainActivity extends AppCompatActivity
         mTimetable.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent Timetable=new Intent(MainActivity.this, com.example.kioi.jkuatportal.Timetable.class);
+                Intent Timetable = new Intent(MainActivity.this, com.example.kioi.jkuatportal.Timetable.class);
                 startActivity(Timetable);
                 finish();
             }
@@ -81,7 +91,7 @@ public class MainActivity extends AppCompatActivity
         mJkusa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent jkusa=new Intent(MainActivity.this,Jkusa.class);
+                Intent jkusa = new Intent(MainActivity.this, Jkusa.class);
                 startActivity(jkusa);
                 finish();
             }
@@ -89,7 +99,7 @@ public class MainActivity extends AppCompatActivity
         mClassrep.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent classrep=new Intent(MainActivity.this,Classreps.class );
+                Intent classrep = new Intent(MainActivity.this, Classreps.class);
                 startActivity(classrep);
                 finish();
             }
@@ -97,7 +107,7 @@ public class MainActivity extends AppCompatActivity
         mMap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent map=new Intent(MainActivity.this,MapsActivity.class );
+                Intent map = new Intent(MainActivity.this, MapsActivity.class);
                 startActivity(map);
                 finish();
             }
@@ -106,7 +116,7 @@ public class MainActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent =new Intent(MainActivity.this,chat.class);
+                Intent intent = new Intent(MainActivity.this, chat.class);
                 startActivity(intent);
                 finish();
             }
@@ -121,15 +131,17 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
     }
-    private void setupDisplayName(){
-        SharedPreferences prefs =getSharedPreferences(RegisterActivity.CHAT_PREFS,MODE_PRIVATE);
 
-        mDisplayName=prefs.getString(RegisterActivity.DISPLAY_NAME_KEY,null);
+    private void setupDisplayName() {
+        SharedPreferences prefs = getSharedPreferences(RegisterActivity.CHAT_PREFS, MODE_PRIVATE);
 
-        if (mDisplayName==null)mDisplayName="anonymous";
+        mDisplayName = prefs.getString(RegisterActivity.DISPLAY_NAME_KEY, null);
+
+        if (mDisplayName == null) mDisplayName = "anonymous";
 
 
     }
+
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -169,24 +181,23 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_camera) {
-            Intent intent = new Intent(MainActivity.this,LoginActivity.class);
+            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
             startActivity(intent);
             finish();
 
         }
         //else if (id == R.id.nav_gallery) {
 
-       // } else if (id == R.id.nav_slideshow) {
-
+        // } else if (id == R.id.nav_slideshow) {
 
 
         //} else if (id == R.id.nav_manage) {
 
-       // } else if (id == R.id.nav_share) {
+        // } else if (id == R.id.nav_share) {
 
-       // } else if (id == R.id.nav_send) {
+        // } else if (id == R.id.nav_send) {
 
-       // }
+        // }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

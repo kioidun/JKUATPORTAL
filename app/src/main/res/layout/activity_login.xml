@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/back"
     android:gravity="center"
     android:orientation="vertical"
     android:paddingBottom="@dimen/bottompad"
     android:paddingLeft="@dimen/leftpad"
     android:paddingRight="@dimen/rightpad"
     android:paddingTop="@dimen/Toppad"
-    android:background="@drawable/back"
     tools:context="com.example.kioi.jkuatportal.LoginActivity">
 
     <ImageView
@@ -27,9 +27,9 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:hint="@string/email"
+        android:inputType="textEmailAddress"
         android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        android:inputType="textEmailAddress" />
+        android:textColorHint="@color/white" />
 
     <EditText
         android:id="@+id/password"
@@ -38,11 +38,11 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginTop="20dp"
-        android:imeActionId="@+id/login"
-        android:textColorHint="@color/white"
         android:hint="@string/password"
+        android:imeActionId="@+id/login"
+        android:inputType="textPassword"
         android:textColor="@color/white"
-        android:inputType="textPassword" />
+        android:textColorHint="@color/white" />
 
     <Button
         android:id="@+id/loginButton"
@@ -50,9 +50,9 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:onClick="signInExistingUser"
         android:layout_marginTop="20dp"
         android:background="@color/colorPrimary"
+        android:onClick="signInExistingUser"
         android:text="@string/login"
         android:textColor="@color/white" />
 

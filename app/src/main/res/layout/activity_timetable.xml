@@ -11,19 +11,20 @@
         android:id="@+id/captureImage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_marginTop="50dp"
         android:layout_marginLeft="20sp"
         android:layout_marginRight="20sp"
-        android:text="@string/captureimage"/>
+        android:layout_marginTop="50dp"
+        android:gravity="center"
+        android:text="@string/captureimage" />
+
     <Button
         android:id="@+id/selectImage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
         android:layout_marginLeft="20sp"
         android:layout_marginRight="20sp"
         android:layout_marginTop="50dp"
-        android:text="@string/select_from_gallery"/>
+        android:gravity="center"
+        android:text="@string/select_from_gallery" />
 
 </LinearLayout>

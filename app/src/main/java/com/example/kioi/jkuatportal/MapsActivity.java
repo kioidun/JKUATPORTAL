@@ -55,11 +55,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mLocationListener = new LocationListener() {
             @Override
             public void onLocationChanged(Location location) {
-                // Add a marker in Sydney and move the camera
+                // Add a marker in kenya and move the camera
                 LatLng userLocation = new LatLng(location.getLatitude(), location.getLongitude());
                 mMap.clear();
                 mMap.addMarker(new MarkerOptions().position(userLocation).title("My location"));
-                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(userLocation, 10));
+                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(userLocation, 15));
             }
 
             @Override
@@ -88,14 +88,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             }
             mLocationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, mLocationListener);
         } else {
-                mLocationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, mLocationListener);
+            mLocationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, mLocationListener);
 
-                Location lastKnownLocation = mLocationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-                LatLng userLocation = new LatLng(lastKnownLocation.getLatitude(), lastKnownLocation.getLongitude());
-                mMap.clear();
-                mMap.addMarker(new MarkerOptions().position(userLocation).title("My Location"));
-                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(userLocation, 10));
-
+            Location lastKnownLocation = mLocationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+            LatLng userLocation = new LatLng(lastKnownLocation.getLatitude(), lastKnownLocation.getLongitude());
+            mMap.clear();
+            mMap.addMarker(new MarkerOptions().position(userLocation).title("My Location"));
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(userLocation, 10));
 
 
         }
@@ -109,7 +108,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        switch(requestCode){
+        switch (requestCode) {
             case 1:
                 if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
 

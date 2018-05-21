@@ -15,10 +15,10 @@ public class Lecturers extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lecturers);
-        mListView=(ListView)findViewById(R.id.listLecturers);
+        mListView = (ListView) findViewById(R.id.listLecturers);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        ArrayList<String> courses=new ArrayList<String>();
+        ArrayList<String> courses = new ArrayList<String>();
         courses.add("Lecturers 1");
         courses.add("Lecturers 2");
         courses.add("Lecturers 3");
@@ -30,7 +30,7 @@ public class Lecturers extends AppCompatActivity {
         courses.add("Lecturers 9");
         courses.add("Lecturers10");
 
-        ArrayAdapter<String > arrayAdapter =new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,courses);
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, courses);
         mListView.setAdapter(arrayAdapter);
     }
 }

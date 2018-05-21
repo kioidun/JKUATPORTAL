@@ -16,21 +16,21 @@ public class Classreps extends AppCompatActivity {
         setContentView(R.layout.activity_classreps);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        mListView=(ListView)findViewById(R.id.listClassreps);
+        mListView = (ListView) findViewById(R.id.listClassreps);
 
-        ArrayList<String> courses=new ArrayList<String>();
-        courses.add("Classrep 1");
-        courses.add("Classrep 2");
-        courses.add("Classrep 3");
-        courses.add("Classrep 4");
-        courses.add("Classrep 5");
-        courses.add("Classrep 6");
-        courses.add("Classrep 7");
-        courses.add("Classrep 8");
-        courses.add("Classrep 9");
-        courses.add("Classrep 10");
+        ArrayList<String> classrep = new ArrayList<String>();
+        classrep.add("Classrep 1");
+        classrep.add("Classrep 2");
+        classrep.add("Classrep 3");
+        classrep.add("Classrep 4");
+        classrep.add("Classrep 5");
+        classrep.add("Classrep 6");
+        classrep.add("Classrep 7");
+        classrep.add("Classrep 8");
+        classrep.add("Classrep 9");
+        classrep.add("Classrep 10");
 
-        ArrayAdapter<String > arrayAdapter =new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,courses);
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, classrep);
         mListView.setAdapter(arrayAdapter);
     }
 }

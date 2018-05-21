@@ -29,12 +29,13 @@ public class chat extends AppCompatActivity {
         setContentView(R.layout.activity_chat);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+
         setupDisplayName();
         mDatabaseReference = FirebaseDatabase.getInstance().getReference();
 
-        mInputText=(EditText)findViewById(R.id.messageInput);
-        mSendButton=(ImageButton)findViewById(R.id.sendButton);
-        mChatListView=(ListView)findViewById(R.id.chat_list_view);
+        mInputText = (EditText) findViewById(R.id.messageInput);
+        mSendButton = (ImageButton) findViewById(R.id.sendButton);
+        mChatListView = (ListView) findViewById(R.id.chat_list_view);
 
         //send the message when the"enter "button is pressed
         mInputText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
@@ -54,22 +55,24 @@ public class chat extends AppCompatActivity {
             }
         });
     }
-    private void setupDisplayName(){
-        SharedPreferences prefs =getSharedPreferences(RegisterActivity.CHAT_PREFS,MODE_PRIVATE);
 
-        mDisplayName=prefs.getString(RegisterActivity.DISPLAY_NAME_KEY,null);
+    private void setupDisplayName() {
+        SharedPreferences prefs = getSharedPreferences(RegisterActivity.CHAT_PREFS, MODE_PRIVATE);
 
-        if (mDisplayName==null)mDisplayName="anonymous";
+        mDisplayName = prefs.getString(RegisterActivity.DISPLAY_NAME_KEY, null);
+
+        if (mDisplayName == null) mDisplayName = "anonymous";
 
 
     }
+
     private void sendMessage() {
 
         //  Grab the text the user typed in and push the message to Firebase
-        Log.d("JKUATPORTAL","I sent something");
-        String input =mInputText.getText().toString();
-        if(!input.equals("")){
-            InstantMessage chat =new InstantMessage(input,mDisplayName);
+        Log.d("JKUATPORTAL", "I sent something");
+        String input = mInputText.getText().toString();
+        if (!input.equals("")) {
+            InstantMessage chat = new InstantMessage(input, mDisplayName);
             //save message to the cloud
             // all our chat messages are to be stored in a place called messages
             //we use the push message to get the reference to the child location
@@ -81,14 +84,15 @@ public class chat extends AppCompatActivity {
     }
 
     // setting the adapter
-   @Override
-    public void onStart(){
+    @Override
+    public void onStart() {
         super.onStart();
-        mAdapter = new ChatListAdapter(this,mDatabaseReference,mDisplayName);
+        mAdapter = new ChatListAdapter(this, mDatabaseReference, mDisplayName);
         mChatListView.setAdapter(mAdapter);
     }
+
     @Override
-    public void onStop(){
+    public void onStop() {
         super.onStop();
 
         //remove the firebase event listener on the adapter

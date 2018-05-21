@@ -4,50 +4,50 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/back"
     android:gravity="center"
     android:orientation="vertical"
     android:paddingBottom="@dimen/bottompad"
     android:paddingLeft="@dimen/leftpad"
     android:paddingRight="@dimen/rightpad"
-    android:background="@drawable/back"
     android:paddingTop="@dimen/Toppad"
     tools:context="com.example.kioi.jkuatportal.RegisterActivity">
 
-     <EditText
-          android:id="@+id/studentName"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:layout_gravity="center_horizontal"
-         android:textColor="@color/white"
-          android:layout_marginLeft="10dp"
-          android:layout_marginRight="@dimen/marginside"
-         android:textColorHint="@color/white"
-          android:hint="@string/student_name"
-          android:inputType="text"></EditText>
+    <EditText
+        android:id="@+id/studentName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="@dimen/marginside"
+        android:hint="@string/student_name"
+        android:inputType="text"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"></EditText>
 
-      <EditText
-          android:id="@+id/studentReg"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:layout_marginLeft="10dp"
-          android:layout_marginRight="10dp"
-          android:textColor="@color/white"
-          android:layout_marginTop="20dp"
-          android:hint="@string/student_reg_number"
-          android:textColorHint="@color/white"
-          android:inputType="text"></EditText>
+    <EditText
+        android:id="@+id/studentReg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
+        android:hint="@string/student_reg_number"
+        android:inputType="text"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"></EditText>
 
-      <EditText
-          android:id="@+id/course"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:layout_marginLeft="10dp"
-          android:layout_marginRight="10dp"
-          android:textColor="@color/white"
-          android:layout_marginTop="20dp"
-          android:textColorHint="@color/white"
-          android:hint="@string/course"
-          android:inputType="text" ></EditText>
+    <EditText
+        android:id="@+id/course"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
+        android:hint="@string/course"
+        android:inputType="text"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"></EditText>
 
     <EditText
         android:id="@+id/mail"
@@ -56,10 +56,10 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginTop="20dp"
-        android:textColorHint="@color/white"
         android:hint="@string/email"
+        android:inputType="textEmailAddress"
         android:textColor="@color/white"
-        android:inputType="textEmailAddress" />
+        android:textColorHint="@color/white" />
 
     <EditText
         android:id="@+id/passwordregister"
@@ -67,11 +67,11 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:textColorHint="@color/white"
         android:layout_marginTop="20dp"
         android:hint="@string/password"
+        android:inputType="textPassword"
         android:textColor="@color/white"
-        android:inputType="textPassword" />
+        android:textColorHint="@color/white" />
 
     <EditText
         android:id="@+id/confirmpassword"
@@ -79,25 +79,24 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:textColorHint="@color/white"
         android:layout_marginTop="20dp"
-        android:textColor="@color/white"
         android:hint="@string/confirm_password"
         android:imeActionId="@+id/register_form_finished"
-        android:inputType="textPassword" />
+        android:inputType="textPassword"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white" />
 
     <Button
         android:id="@+id/register_sign_up_button"
         style="?android:textAppearanceMedium"
-        android:background="@color/white"
-        android:textColor="@color/colorPrimary"
-        android:onClick="signUp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:background="@color/white"
+        android:onClick="signUp"
         android:text="Register"
-        android:textStyle="bold"/>
-
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold" />
 
 
 </LinearLayout>

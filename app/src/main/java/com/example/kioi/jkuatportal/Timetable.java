@@ -14,9 +14,9 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
 public class Timetable extends AppCompatActivity {
-private Button mselectImage;
-private StorageReference mStorageReference;
-private static final int GALLERY_INTENT =2;
+    private Button mselectImage;
+    private StorageReference mStorageReference;
+    private static final int GALLERY_INTENT = 2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,30 +24,31 @@ private static final int GALLERY_INTENT =2;
         setContentView(R.layout.activity_timetable);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        mStorageReference= FirebaseStorage.getInstance().getReference();
-        mselectImage=(Button)findViewById(R.id.selectImage);
+        mStorageReference = FirebaseStorage.getInstance().getReference();
+        mselectImage = (Button) findViewById(R.id.selectImage);
 
         mselectImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent =new Intent(Intent.ACTION_PICK);
+                Intent intent = new Intent(Intent.ACTION_PICK);
                 intent.setType("image");
-                startActivityForResult(intent,GALLERY_INTENT);
+                startActivityForResult(intent, GALLERY_INTENT);
             }
         });
     }
-    @Override
-    protected void onActivityResult(int requestCode,int resultCode,Intent data){
-        super.onActivityResult(requestCode,resultCode,data);
 
-        if(requestCode == GALLERY_INTENT && resultCode== RESULT_OK){
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == GALLERY_INTENT && resultCode == RESULT_OK) {
             Uri uri = data.getData();
             StorageReference filePath = mStorageReference.child("photos").child(uri.getLastPathSegment());
 
             filePath.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                    Toast.makeText(Timetable.this,"upload Done",Toast.LENGTH_LONG).show();
+                    Toast.makeText(Timetable.this, "upload Done", Toast.LENGTH_LONG).show();
                 }
             });
         }
