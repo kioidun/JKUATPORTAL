@@ -36,41 +36,52 @@
             android:theme="@style/AppTheme.NoActionBar" />
 
         <activity android:name=".courses"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".MainActivity"
+            android:label="@string/title_activity_courses"
+            >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.kioi.jkuatportal.MainActivity" />
         </activity>
 
         <activity android:name=".Lecturers"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".MainActivity"
+            android:label="@string/title_activity_lecturers"
+            >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.kioi.jkuatportal.LoginActivity" />
         </activity>
 
         <activity
-            android:name=".Timetable">
+            android:name=".Timetable"
+            android:label="@string/title_activity_Timetable"
+            >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.kioi.jkuatportal.LoginActivity" />
         </activity>
 
         <activity android:name=".Jkusa"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".MainActivity"
+            android:label="@string/title_activity_Jkusa"
+            >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.kioi.jkuatportal.LoginActivity" />
         </activity>
 
         <activity android:name=".Classreps"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".MainActivity"
+            android:label="@string/title_activity_classrep">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.kioi.jkuatportal.LoginActivity" />
         </activity>
 
-        <activity android:name=".chat" />
+        <activity android:name=".chat"
+            android:label="@string/title_activity_chat"
+            />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").

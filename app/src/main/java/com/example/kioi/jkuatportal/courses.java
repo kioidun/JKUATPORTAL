@@ -45,6 +45,8 @@ public class courses extends AppCompatActivity {
         courses.add("course 19");
         courses.add("course 20");
 
+
+
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, courses);
         mListView.setAdapter(arrayAdapter);
 
