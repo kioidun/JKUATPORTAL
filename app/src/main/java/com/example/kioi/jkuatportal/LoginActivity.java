@@ -31,13 +31,13 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
-
-        mEmail = (EditText) findViewById(R.id.email);
-        mPassword = (EditText) findViewById(R.id.password);
-        mLoginButton = (Button) findViewById(R.id.loginButton);
-        mRegister = (Button) findViewById(R.id.Register);
+        mEmail=(EditText)findViewById(R.id.email);
+        mPassword=(EditText)findViewById(R.id.password) ;
+        mLoginButton=(Button)findViewById(R.id.loginButton);
+        mRegister=(Button)findViewById(R.id.Register);
 
 
         mPassword.setOnEditorActionListener(new TextView.OnEditorActionListener() {
@@ -53,7 +53,7 @@ public class LoginActivity extends AppCompatActivity {
         mRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent register = new Intent(LoginActivity.this, RegisterActivity.class);
+                Intent register =new Intent(LoginActivity.this,RegisterActivity.class);
                 startActivity(register);
 
             }
@@ -64,32 +64,30 @@ public class LoginActivity extends AppCompatActivity {
                 attemptLogin();
             }
         });
-        mAuth = FirebaseAuth.getInstance();
+        mAuth=FirebaseAuth.getInstance();
     }
-
-    public void signInExistingUser(View v) {
+    public void signInExistingUser(View v)   {
         attemptLogin();
 
     }
+    private void attemptLogin(){
+        String email=mEmail.getText().toString();
+        String password=mPassword.getText().toString();
 
-    private void attemptLogin() {
-        String email = mEmail.getText().toString();
-        String password = mPassword.getText().toString();
-
-        if (email.equals("") || password.equals("")) return;
-        Toast.makeText(getApplication(), "Login in Progress...", Toast.LENGTH_SHORT).show();
+        if(email.equals("") || password.equals(""))return;
+        Toast.makeText(getApplication(),"Login in Progress...",Toast.LENGTH_SHORT).show();
 
         //using firebase email and password
-        mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+        mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-                Log.d("JKUATPORTAL", "signInWithEmail() onComplete: " + task.getException());
+                Log.d("JKUATPORTAL","signInWithEmail() onComplete: "+task.getException());
 
-                if (!task.isSuccessful()) {
-                    Log.d("JKUATPORTAL", "problem signing in:" + task.getException());
+                if(!task.isSuccessful()){
+                    Log.d("JKUATPORTAL","problem signing in:"+ task.getException());
                     showErrorDialog("problem signing in");
-                } else {
-                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                }else{
+                    Intent intent=new Intent(LoginActivity.this,MainActivity.class);
                     finish();
                     startActivity(intent);
 
@@ -98,12 +96,11 @@ public class LoginActivity extends AppCompatActivity {
         });
 
     }
-
-    private void showErrorDialog(String message) {
+    private void showErrorDialog(String message){
         new AlertDialog.Builder(this)
                 .setTitle("oops")
                 .setMessage(message)
-                .setPositiveButton(android.R.string.ok, null)
+                .setPositiveButton(android.R.string.ok,null)
                 .setIcon(android.R.drawable.ic_dialog_alert)
                 .show();
     }

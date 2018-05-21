@@ -63,6 +63,7 @@ public class MainActivity extends AppCompatActivity
         mClassrep = (Button) findViewById(R.id.Classreps);
         mMap = (Button) findViewById(R.id.maps);
 
+
         mCourses.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -130,6 +131,11 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        //set username
+        View headerView= navigationView.getHeaderView(0);
+        TextView navUsername = headerView.findViewById(R.id.Name);
+        navUsername.setText(SaveSharedPreference.getUserName(this));
+
     }
 
     private void setupDisplayName() {
@@ -203,5 +209,6 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
 
 }
