@@ -3,6 +3,7 @@ package com.example.kioi.jkuatportal;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Color;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -31,6 +32,7 @@ public class ChatListAdapter extends BaseAdapter{
 
             mSnapshotList.add(dataSnapshot);
             notifyDataSetChanged();
+
         }
 
         @Override
@@ -121,11 +123,11 @@ public class ChatListAdapter extends BaseAdapter{
         if(isItMe){
             holder.params.gravity= Gravity.END;
             holder.authorName.setTextColor(Color.GREEN);
-            holder.body.setBackgroundResource(R.drawable.bubble2);
+            //holder.body.setBackgroundResource(R.drawable.bubble2);
         }else{
             holder.params.gravity= Gravity.START;
             holder.authorName.setTextColor(Color.BLUE);
-            holder.body.setBackgroundResource(R.drawable.bubble1);
+            //holder.body.setBackgroundResource(R.drawable.bubble1);
 
         }
         holder.authorName.setLayoutParams(holder.params);

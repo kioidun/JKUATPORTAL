@@ -1,5 +1,7 @@
 package com.example.kioi.jkuatportal;
 
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
@@ -71,7 +73,7 @@ public class LoginActivity extends AppCompatActivity {
 
     }
     private void attemptLogin(){
-        String email=mEmail.getText().toString();
+        final String email=mEmail.getText().toString();
         String password=mPassword.getText().toString();
 
         if(email.equals("") || password.equals(""))return;
@@ -87,6 +89,9 @@ public class LoginActivity extends AppCompatActivity {
                     Log.d("JKUATPORTAL","problem signing in:"+ task.getException());
                     showErrorDialog("problem signing in");
                 }else{
+
+                    SaveSharedPreference.setUserName(getApplicationContext(),email);
+
                     Intent intent=new Intent(LoginActivity.this,MainActivity.class);
                     finish();
                     startActivity(intent);

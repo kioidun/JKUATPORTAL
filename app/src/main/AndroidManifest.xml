@@ -10,9 +10,9 @@
          location permissions for the 'MyLocation' functionality. 
     -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -22,46 +22,54 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".LoginActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".RegisterActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.kioi.jkuatportal.LoginActivity" />
         </activity>
+
         <activity
             android:name=".MainActivity"
             android:label="@string/title_activity_main2"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".courses">
+
+        <activity android:name=".courses"
+            android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.kioi.jkuatportal.MainActivity" />
         </activity>
-        <activity android:name=".Lecturers">
+
+        <activity android:name=".Lecturers"
+            android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.kioi.jkuatportal.LoginActivity" />
         </activity>
-        <activity android:name=".Timetable">
+
+        <activity
+            android:name=".Timetable">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.kioi.jkuatportal.LoginActivity" />
         </activity>
-        <activity android:name=".Jkusa">
+
+        <activity android:name=".Jkusa"
+            android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.kioi.jkuatportal.LoginActivity" />
         </activity>
-        <activity android:name=".Classreps">
+
+        <activity android:name=".Classreps"
+            android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.kioi.jkuatportal.LoginActivity" />
         </activity>
+
         <activity android:name=".chat" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -78,7 +86,15 @@
         <activity
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps" />
-    </application>
+        <activity
+            android:name=".SplashActivity"
+            android:theme="@style/SplashTheme">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
 
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
+    </application>
 
 </manifest>
